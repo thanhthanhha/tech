@@ -1,0 +1,81 @@
+const hey = () => {
+    const title = "Lover,Time Start,Time End,Year";
+    const value = ["Quang,Aug,Sept,2017", "Anh,June,Sept,2016", "Anh -2,June,Sept,2019", "Phuoc,Sept,Dec,2017", "Lee,July,Sept,2018"];
+    //headers
+    var newtitle = title.split(",");
+    console.log(newtitle);
+    let table = document.querySelector("table");
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for (let data of newtitle) {
+    th = document.createElement("th");
+    text = document.createTextNode(data);
+    th.appendChild(text);
+    row.appendChild(th);
+    }
+    const arrayy = [];
+     for (l = 0; l < value.length; l++)  {
+            var valuee = value[l].split(",");
+            console.log(typeof valuee);
+            let row = thead.insertRow();
+            for (let data of valuee) {
+                cell = row.insertCell();
+                text = document.createTextNode(data);
+                cell.appendChild(text);
+        }
+    }
+}
+const openForm = (modal_Id) => {
+    console.log('hello');
+    var modalId = $('#' + modal_Id);
+    modalId.fadeIn('slow');
+}
+const closeForm = (modal_Id) => {
+    var modalId = $('#' + modal_Id);
+                modalId.fadeOut('slow');
+}
+window.onclick = function (event) {
+
+   switch (event.target.id) {
+      case 'form-popup':
+       $('#' + event.target.id).fadeOut('slow'); 
+      break;
+       default:
+            break;
+    }
+}
+const dope = () => {
+    var input =  document.getElementById("firstname");
+    document.getElementById("firstname").addEventListener("blur", () => {
+    console.log("hello");
+    if(input.value) {
+        document.getElementById("firstname").classList.add('value-exists');
+      }
+    }
+    )
+}
+function openModal(modal_Id) {
+    var modalId = $('#' + modal_Id);
+        modalId.fadeIn('slow');
+/* modalId.show() */;
+}
+
+function closeModal(modal_Id) {
+var modalId = $('#' + modal_Id);
+        modalId.fadeOut('slow');
+        /* modalId.hide() */;
+}
+
+window.onclick = function (event) {
+
+    switch (event.target.id) {
+        case 'modalDeliveryAddress':
+           $('#' + event.target.id).fadeOut('slow'); 
+            break;
+        default:
+            break;
+    }
+}
+
+
+
